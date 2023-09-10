@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <input type="file" id="videoInput" accept="video/*">
+  <video id="videoPlayer" controls></video>
+  <!-- Add this input element for file uploads -->
+  <!-- Only allow srt file for now. Will add webvtt and csv later -->
+<input type="file" id="uploadFileInput" accept=".srt,.vtt,.csv">
+
+  <textarea id="noteTextarea" autofocus></textarea>
+  <input type="text" id="searchInput" placeholder="Search notes...">
+  <div id="noteCount"></div>
+  <button id="editTimesBtn">Edit Times</button>
+  <ul id="noteList"></ul>
+  <div>
+    <button id="extractButton">Extract Selected Clips</button>
+    <div id="extractionStatus"></div>
+  </div>
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Edit Note</h2>
+      <textarea id="editNoteTextarea"></textarea>
+      <button id="saveEditButton">Save</button>
+    </div>
+  </div>
+  <div id="timeEditModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Edit Times</h2>
+      <label for="timeAdjustment">Time Adjustment (seconds):</label>
+      <input type="number" id="timeAdjustment" min="-3600" max="3600">
+      <button id="applyTimeAdjustment">Apply</button>
+    </div>
+  </div>
+  
+  <button id="showNotesBtn">Show Notes</button>
+  <div class="pagination">
+    <button id="paginationPrev">Previous</button>
+    <button id="paginationNext">Next</button>
+  </div>
+  <button id="saveSRT">Save</button> <!-- New Save button -->
+  <script src="renderer.js"></script>
+</body>
+</html>

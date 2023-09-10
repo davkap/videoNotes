@@ -1,0 +1,3 @@
+BUGS {
+    - If there is already notelist showing, when I upload srt file it adds to the notelist instead of replacing it.
+}
